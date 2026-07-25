@@ -49,7 +49,7 @@ class QuestsSchema(ma.Schema):
     is_completed = ma.fields.Boolean(required=True, dump_default=False)
 
     realm = ma.fields.Nested("RealmsSchema", exclude=["quests"])
-    heroes = ma.fields.Nested("HeroesSchema", many=True, exclude=["quests"])
+    heroes = ma.fields.Nested("HeroesSchema", many=True, exclude=["quests", "abilities"])
 
 
 quest_schema = QuestsSchema()

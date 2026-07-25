@@ -22,3 +22,11 @@ def get_all_alive_heroes():
 @hero.route("/hero/<hero_id>", methods=["GET"])
 def get_hero_by_id(hero_id):
     return controllers.get_hero_by_id(hero_id)
+
+@hero.route("/hero/<hero_id>", methods=["PUT"])
+def update_hero_by_id(hero_id):
+    return controllers.update_hero_by_id(hero_id)
+
+@hero.route("/hero/delete/<hero_id>", methods=["DELETE"])
+def delete_hero_by_id(hero_id):
+    return controllers.delete_hero_by_id(hero_id)

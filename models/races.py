@@ -39,7 +39,7 @@ class RacesSchema(ma.Schema):
     homeland = ma.fields.String(allow_none=True)
     lifespan = ma.fields.Integer(allow_none=True)
 
-    heroes = ma.fields.Nested("HeroesSchema", many=True, exclude=["race"])
+    heroes = ma.fields.Nested("HeroesSchema", many=True, only=["hero_id", "hero_name", "age"])
 
 
 race_schema = RacesSchema()
